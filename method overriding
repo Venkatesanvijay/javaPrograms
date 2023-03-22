@@ -1,0 +1,19 @@
+package org.test.login;
+import org.org.Rahul;
+import org.org.Deva;
+// method overriding
+
+public class Vijay extends Deva{
+	public void eng() {
+		System.out.println("Vijay is an engineer");
+	}
+	public static void main(String[] args) {
+		Vijay v= new Vijay();
+		Deva d = new Deva () ;
+		Rahul r = new Rahul();
+		v.eng();
+		d.eng();
+		r.eng();
+	}
+
+}
