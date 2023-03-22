@@ -1,0 +1,9 @@
+package org.org;
+
+public class Rahul {
+	public void eng () {
+		System.out.println("Rahul is an engineer");
+	}
+
+}
+
