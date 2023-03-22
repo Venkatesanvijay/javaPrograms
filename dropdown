@@ -1,0 +1,47 @@
+package org.org;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+public class DropDownContinuation {
+	public static void main(String[] args) throws InterruptedException{
+		System.setProperty("Webdriver.chrome.driver", 
+				"C:\\Users\\vijay\\eclipse-workspace\\Selenium\\driver\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions chromeoptions=new ChromeOptions();
+		chromeoptions.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(chromeoptions);
+		driver.get("https://www.softwaretestingmaterial.com/sample-webpage-to-automate/");
+		driver.manage().window().maximize();
+		WebElement isMultiple = driver.findElement(By.xpath("(//select[@class='spTextField'])[1]"));
+		Select s = new Select(isMultiple);
+		//TO CHECK WHETHER DROPDOWN SELECT MUPLTIPLE OPTION OR NOT
+		boolean b = s.isMultiple();
+		System.out.println(b);
+		s.selectByValue("msmanual");
+		s.selectByVisibleText("Agile Methodology");
+		//to get all options
+		List<WebElement> options = s.getOptions();
+		for(int i=0;i<3;i++) {
+		s.selectByIndex(i);
+		}
+		//to get first selected options
+		WebElement option = s.getFirstSelectedOption();
+		String text = option.getText();
+		System.out.println(text);
+		Thread.sleep(2000);
+		//deselect all
+		s.deselectByValue("msmanual");
+		s.deselectByVisibleText("Agile Methodology");
+		Thread.sleep(2000);
+		//deselect all options
+		s.deselectAll();
+		
+	}
+
+}
