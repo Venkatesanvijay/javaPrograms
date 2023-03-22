@@ -1,0 +1,37 @@
+package org.test.login;
+// method overloading
+
+public class Employee {
+	public void empDetails(String name) {
+		System.out.println("Employee name :"+  "Venkatesan");
+		}
+	// arguments depends on datatype
+	public void empDetails (float empSalary) {
+		System.out.println("Employee salary :" + 54000f);
+	}
+	// arguments depends on datatype count
+	
+	public void empDetails (int empId,long empPhoneNo,char empGender) {
+		System.out.println("Employee id is :" + 121 +"\n" + "Employee phone no is:"+ 6383166417l +"\n"
+				+" Employee gender is :"+ 'M' ); 
+	}
+	public void empDetails (int empRollNo,long empPhoneNo,char empGender, boolean empId) {
+		System.out.println("Employee roll no is :" + 121 +"\n" + "Employee phone no is:"+ 6383166417l +"\n"
+				+" Employee gender is :"+ 'M' +"\n"+"Employee id  is:"+ true ); 
+	}
+	// arguments depends on datatype order/sequence
+	public void empDetails (boolean empStatus, double empRent) {
+		System.out.println("Employee status is :"+ false +"\n"+"Employee rent is :"+ 6481.33);
+	}
+	public static void main(String[] args) {
+		Employee e = new Employee ();
+		e.empDetails("venkatesan");
+		e.empDetails(33, 6283166417l, 'M', true);
+		e.empDetails(71, 6383166417l, 'M');
+		e.empDetails(3456.72f);
+		e.empDetails(true, 6590.43);
+	}
+	
+	
+
+}
