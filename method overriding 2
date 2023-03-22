@@ -1,0 +1,8 @@
+package org.org;
+
+public class Deva extends Rahul{
+	public void eng() {
+		System.out.println("Deva is an engineer");
+	}
+
+}
