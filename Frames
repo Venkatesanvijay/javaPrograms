@@ -1,0 +1,24 @@
+package org.org;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+//frames 
+
+public class FramesPro {
+	public static void main(String[] args) {
+		System.setProperty("Webdriver.chrome.driver", 
+				"C:\\Users\\vijay\\eclipse-workspace\\Selenium\\driver\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions chromeoptions=new ChromeOptions();
+		chromeoptions.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(chromeoptions);
+		driver.get("https://www.selenium.dev/selenium/docs/api/java/overview-summary.html");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//*[@id=\"i0\"]/th/a")).click();
+		driver.switchTo().defaultContent();
+		driver.findElement(By.xpath("/html/body/main/div[2]/ul/li[1]/table/tbody[2]/tr[13]/th/a")).click();
+
+}
+}
